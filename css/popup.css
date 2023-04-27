@@ -1,0 +1,278 @@
+﻿body {
+}
+
+a {
+    color: #333333;
+}
+.contact_popup {
+    display: none;
+    position: fixed;
+    left: 10px;
+    bottom: 0;
+    z-index: 10;
+    width: 170px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 2px -4px 11px rgb(0 0 0 / 5%);
+}
+
+.contact_popup .popup_icon {
+    height: 40px;
+    display: block;
+    background-color: #033067;
+    position: relative;
+}
+
+.contact_popup .popup_icon .phone {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.contact_popup .phone {
+    display: block;
+    text-align: center;
+    font-size: 38px;
+    letter-spacing: 3px;
+    color: #033067;
+    font-weight: bolder;
+}
+
+.contact_popup .popup_icon .quick-alo-ph-circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 50%;
+    margin-left: -50px;
+    border: 2px solid #b7a553;
+    background-color: transparent;
+    border-radius: 100%;
+    opacity: .1;
+    animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+    transition: all .5s;
+    transform-origin: 50% 50%;
+}
+
+.quick-alo-ph-circle {
+    width: 160px;
+    height: 160px;
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    background-color: transparent;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid rgba(30,30,30,.4);
+    border: 2px solid #bfebfc 9;
+    opacity: .1;
+    -webkit-animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+    -moz-animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+    -ms-animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+    -o-animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+    animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.contact_popup .popup_icon .quick-alo-ph-circle-fill {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 11px;
+    left: 50%;
+    margin-left: -40px;
+    background-color: #c5b775;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    opacity: .1;
+    animation: quick-alo-circle-fill-anim 2.3s infinite ease-in-out;
+    transition: all .5s;
+    transform-origin: 50% 50%;
+}
+
+.contact_popup .popup_icon .bg_color {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 26px;
+    left: 50%;
+    margin-left: -25px;
+    border-radius: 50%;
+    background-color: #df2322;
+}
+
+.contact_popup .popup_icon .quick-alo-ph-img-circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 32px;
+    left: 50%;
+    margin-left: -25px;
+    color: #fff;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    opacity: .99;
+    animation: quick-alo-circle-img-anim 1s infinite ease-in-out;
+    transform-origin: 50% 50%;
+}
+
+.contact_popup .popup_icon:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: -3px;
+    height: 37px;
+    background-color: #033067;
+    transform: rotate(-7deg);
+    margin-top: -19px;
+    z-index: 1;
+}
+
+.contact_popup .popup_content {
+    background-color: #f9f9f9;
+    min-height: 15%;
+    position: relative;
+    margin-bottom: 7px;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 1px 1px 5px rgb(0 0 0 / 15%);
+}
+
+.contact_popup .text {
+    padding: 5px 6px 0;
+    visibility: hidden;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: #01455c;
+    text-shadow: 0 0;
+}
+
+.contact_popup .text .mark {
+    display: block;
+    color: #033067;
+    text-shadow: 0 0;
+    font-size: 1.45rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.contact_popup .phone {
+    display: block;
+    text-align: center;
+    font-size: 38px;
+    letter-spacing: 3px;
+    color: #e05c11;
+    font-weight: bolder;
+}
+
+.contact_popup .popup_content:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f9f9f9;
+    top: 100%;
+    right: 0;
+    left: 0;
+    margin: -5px auto 0;
+    transform: rotate(45deg);
+    z-index: 12;
+}
+
+[class^="icon-"], [class*=" icon-"], i[class*="fa-"], span[class*="fa-"] {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    *margin-right: .3em;
+}
+
+.fa-phone:before {
+    content: "\f095";
+}
+
+
+@media (max-width: 991px)
+ {
+    
+    .contact_popup {
+    display: block;
+    position: fixed;
+    left: 10px;
+    bottom: 0;
+    z-index: 10;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px rgb(0 0 0 / 0%);
+}
+
+    .contact_popup .popup_icon {
+    height: 40px;
+    display: block;
+    background-color: transparent;
+    position: relative;
+}
+
+  
+        .contact_popup .popup_content:after {
+            display:none;
+        }
+  
+
+    .contact_popup .popup_content {
+    background-color:  transparent ;
+    min-height: 100px;
+ 
+    /*border-radius: 0 0 3px 3px;*/
+    box-shadow: 0px 0px 0px rgb(0 0 0 / 0%);
+}
+    .contact_popup .popup_icon .phone {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom:200px;
+    z-index: 5;
+}
+
+.contact_popup .phone {
+    display: block;
+    text-align: center;
+    font-size: 38px;
+    letter-spacing: 3px;
+    color: #033067;
+    font-weight: bolder;
+}
+.contact_popup .phone .label {
+    display: none;
+    
+}
+.contact_popup .popup_icon:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: -3px;
+    height: 37px;
+    background-color: transparent;
+    transform: rotate(-7deg);
+    margin-top: -19px;
+    z-index: 1;
+}
+
+}

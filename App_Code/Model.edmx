@@ -1,0 +1,2916 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Users" EntityType="Model.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="inboxes" EntityType="Model.Store.inboxes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Outboxes" EntityType="Model.Store.Outboxes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Payments" EntityType="Model.Store.Payments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="police" EntityType="Model.Store.police" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Favs" EntityType="Model.Store.Favs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DateTimes" EntityType="Model.Store.DateTimes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Supports" EntityType="Model.Store.Supports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kalas" EntityType="Model.Store.Kalas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="comments" EntityType="Model.Store.comments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Groups" EntityType="Model.Store.Groups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Downloads" EntityType="Model.Store.Downloads" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DownloadGroups" EntityType="Model.Store.DownloadGroups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Galleries" EntityType="Model.Store.Galleries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AXes" EntityType="Model.Store.AXes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Abouts" EntityType="Model.Store.Abouts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Links" EntityType="Model.Store.Links" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KalaImages" EntityType="Model.Store.KalaImages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubGroups" EntityType="Model.Store.SubGroups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Details" EntityType="Model.Store.Details" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Photos" EntityType="Model.Store.Photos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Balances" EntityType="Model.Store.Balances" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Photo_comment" EntityType="Model.Store.Photo_comment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sub_comment" EntityType="Model.Store.Sub_comment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Baskets" EntityType="Model.Store.Baskets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Factors" EntityType="Model.Store.Factors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Det_comment" EntityType="Model.Store.Det_comment" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_inboxes_Users" Association="Model.Store.FK_inboxes_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="inbox" EntitySet="inboxes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outbox_Users" Association="Model.Store.FK_Outbox_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Outbox" EntitySet="Outboxes" />
+    </AssociationSet>
+    <AssociationSet Name="UserPayment" Association="Model.Store.UserPayment">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="Userpolice" Association="Model.Store.Userpolice">
+      <End Role="User" EntitySet="Users" />
+      <End Role="police" EntitySet="police" />
+    </AssociationSet>
+    <AssociationSet Name="UserFav" Association="Model.Store.UserFav">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Fav" EntitySet="Favs" />
+    </AssociationSet>
+    <AssociationSet Name="UserDateTime" Association="Model.Store.UserDateTime">
+      <End Role="User" EntitySet="Users" />
+      <End Role="DateTime" EntitySet="DateTimes" />
+    </AssociationSet>
+    <AssociationSet Name="UserSupport" Association="Model.Store.UserSupport">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Support" EntitySet="Supports" />
+    </AssociationSet>
+    <AssociationSet Name="UserKala" Association="Model.Store.UserKala">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Kala" EntitySet="Kalas" />
+    </AssociationSet>
+    <AssociationSet Name="Kalacomment" Association="Model.Store.Kalacomment">
+      <End Role="Kala" EntitySet="Kalas" />
+      <End Role="comment" EntitySet="comments" />
+    </AssociationSet>
+    <AssociationSet Name="UserGroup" Association="Model.Store.UserGroup">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+    <AssociationSet Name="UserDownloadGroup" Association="Model.Store.UserDownloadGroup">
+      <End Role="User" EntitySet="Users" />
+      <End Role="DownloadGroup" EntitySet="DownloadGroups" />
+    </AssociationSet>
+    <AssociationSet Name="DownloadGroupStandard" Association="Model.Store.DownloadGroupStandard">
+      <End Role="DownloadGroup" EntitySet="DownloadGroups" />
+      <End Role="Standard" EntitySet="Downloads" />
+    </AssociationSet>
+    <AssociationSet Name="GalleryAX" Association="Model.Store.GalleryAX">
+      <End Role="Gallery" EntitySet="Galleries" />
+      <End Role="AX" EntitySet="AXes" />
+    </AssociationSet>
+    <AssociationSet Name="UserGallery" Association="Model.Store.UserGallery">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Gallery" EntitySet="Galleries" />
+    </AssociationSet>
+    <AssociationSet Name="UserAbout" Association="Model.Store.UserAbout">
+      <End Role="User" EntitySet="Users" />
+      <End Role="About" EntitySet="Abouts" />
+    </AssociationSet>
+    <AssociationSet Name="UserLinks" Association="Model.Store.UserLinks">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Links" EntitySet="Links" />
+    </AssociationSet>
+    <AssociationSet Name="KalaKalaImage" Association="Model.Store.KalaKalaImage">
+      <End Role="Kala" EntitySet="Kalas" />
+      <End Role="KalaImage" EntitySet="KalaImages" />
+    </AssociationSet>
+    <AssociationSet Name="GroupSubGroup" Association="Model.Store.GroupSubGroup">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="SubGroup" EntitySet="SubGroups" />
+    </AssociationSet>
+    <AssociationSet Name="SubGroupDetail" Association="Model.Store.SubGroupDetail">
+      <End Role="SubGroup" EntitySet="SubGroups" />
+      <End Role="Detail" EntitySet="Details" />
+    </AssociationSet>
+    <AssociationSet Name="DetailPhoto" Association="Model.Store.DetailPhoto">
+      <End Role="Detail" EntitySet="Details" />
+      <End Role="Photo" EntitySet="Photos" />
+    </AssociationSet>
+    <AssociationSet Name="UserBalance" Association="Model.Store.UserBalance">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Balance" EntitySet="Balances" />
+    </AssociationSet>
+    <AssociationSet Name="PhotoPhoto_comment" Association="Model.Store.PhotoPhoto_comment">
+      <End Role="Photo" EntitySet="Photos" />
+      <End Role="Photo_comment" EntitySet="Photo_comment" />
+    </AssociationSet>
+    <AssociationSet Name="SubGroupSub_comment" Association="Model.Store.SubGroupSub_comment">
+      <End Role="SubGroup" EntitySet="SubGroups" />
+      <End Role="Sub_comment" EntitySet="Sub_comment" />
+    </AssociationSet>
+    <AssociationSet Name="UserBasket" Association="Model.Store.UserBasket">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Basket" EntitySet="Baskets" />
+    </AssociationSet>
+    <AssociationSet Name="UserFactor" Association="Model.Store.UserFactor">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Factor" EntitySet="Factors" />
+    </AssociationSet>
+    <AssociationSet Name="DetailDet_comment" Association="Model.Store.DetailDet_comment">
+      <End Role="Detail" EntitySet="Details" />
+      <End Role="Det_comment" EntitySet="Det_comment" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Pass" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Role" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="GU_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Block" Type="bit" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Tel" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Rss" Type="bit" Nullable="true" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Cover" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_Cover" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Position" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ConfirmImage" Type="bit" Nullable="true" />
+    <Property Name="ConfirmCover" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="inboxes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="From_ID" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="U_ID" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Outboxes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="To_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="U_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BankName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PayMethod" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SerialNo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Service" Type="real" Nullable="true" />
+    <Property Name="CardNo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Pay_d" Type="tinyint" Nullable="true" />
+    <Property Name="Pay_m" Type="tinyint" Nullable="true" />
+    <Property Name="Pay_y" Type="smallint" Nullable="true" />
+    <Property Name="Tel" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="U_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Confermed" Type="bit" Nullable="true" />
+    <Property Name="Accepted_ID" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="Accepted_Date" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Bonus" Type="int" Nullable="true" />
+    <Property Name="Bedehkar" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="Bestankar" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="Balance" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Factor_No" Type="int" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="police">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="From_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="For_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Visited" Type="bit" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Favs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FavID" Type="int" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DateTimes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Start" Type="datetime" Nullable="true" />
+    <Property Name="End" Type="datetime" Nullable="true" />
+    <Property Name="U_ID" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="P_Start" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="P_End" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supports">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sender" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="U_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Topic" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="visited" Type="bit" Nullable="true" />
+    <Property Name="Ticket_ID" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Responser" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Answer" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kalas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Price1" Type="int" Nullable="true" />
+    <Property Name="Price2" Type="int" Nullable="true" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Tel" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Fax" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Yid" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Ostan" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="IsStock" Type="bit" Nullable="true" />
+    <Property Name="Sold" Type="bit" Nullable="true" />
+    <Property Name="Confirmed" Type="bit" Nullable="true" />
+    <Property Name="Group" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Tahator" Type="bit" Nullable="true" />
+    <Property Name="T_Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="HaveAx" Type="bit" Nullable="true" />
+    <Property Name="SubGroup" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Exist" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Model" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Color" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des2" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des3" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="BuyCount" Type="int" Nullable="true" />
+    <Property Name="Click" Type="int" Nullable="true" />
+    <Property Name="Category" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Brand" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Visit" Type="int" Nullable="true" DefaultValue="1" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Price" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Tel" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Checked" Type="bit" Nullable="true" />
+    <Property Name="Block" Type="bit" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Kala_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_width" Type="int" Nullable="true" />
+    <Property Name="Image_height" Type="int" Nullable="true" />
+    <Property Name="Image_size" Type="int" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Downloads">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Add" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="GUID" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Num" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Time" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PDate" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Price" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Visit" Type="int" Nullable="true" DefaultValue="1" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DownloadGroup_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DownloadGroups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Time" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Visit" Type="int" Nullable="true" DefaultValue="1" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Galleries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Group" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Subgroup" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Block" Type="bit" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_height" Type="int" Nullable="true" />
+    <Property Name="Image_width" Type="int" Nullable="true" />
+    <Property Name="Image_size" Type="int" Nullable="true" />
+    <Property Name="Visit" Type="int" Nullable="true" DefaultValue="1" />
+    <Property Name="Image_Name_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AXes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Size" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Block" Type="bit" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="User_id" Type="int" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Gallery_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Abouts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Links">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Add" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KalaImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_b" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Visit" Type="int" Nullable="true" DefaultValue="1" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Kala_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubGroups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Rss" Type="bit" Nullable="true" />
+    <Property Name="Image_b" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Agent" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Visit" Type="int" Nullable="true" DefaultValue="1" />
+    <Property Name="Image_width" Type="int" Nullable="true" />
+    <Property Name="Image_height" Type="int" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_size" Type="int" Nullable="true" />
+    <Property Name="Path_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Publish" Type="bit" Nullable="true" />
+    <Property Name="GroupName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SubgroupName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Group_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Rss" Type="bit" Nullable="true" />
+    <Property Name="Image_b" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_width" Type="int" Nullable="true" />
+    <Property Name="Image_size" Type="int" Nullable="true" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_height" Type="int" Nullable="true" />
+    <Property Name="Visit" Type="int" Nullable="true" DefaultValue="1" />
+    <Property Name="Path_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Publish" Type="bit" Nullable="true" />
+    <Property Name="SubGroup_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Photos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Size" Type="int" Nullable="true" />
+    <Property Name="Rss" Type="bit" Nullable="true" />
+    <Property Name="Image_width" Type="int" Nullable="true" />
+    <Property Name="Image_size" Type="int" Nullable="true" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_height" Type="int" Nullable="true" />
+    <Property Name="Visit" Type="int" Nullable="true" DefaultValue="1" />
+    <Property Name="Path_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Publish" Type="bit" Nullable="true" />
+    <Property Name="Detail_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Balances">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Remain" Type="int" Nullable="true" DefaultValue="0" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Photo_comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_id" Type="int" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Checked" Type="bit" Nullable="true" />
+    <Property Name="Block" Type="bit" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Publish" Type="bit" Nullable="true" />
+    <Property Name="Photo_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sub_comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_id" Type="int" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Checked" Type="bit" Nullable="true" />
+    <Property Name="Block" Type="bit" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Publish" Type="bit" Nullable="true" />
+    <Property Name="SubGroup_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Baskets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kala_id" Type="int" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Count" Type="smallint" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_t" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Price1" Type="int" Nullable="true" />
+    <Property Name="Price2" Type="int" Nullable="true" />
+    <Property Name="Delivered" Type="bit" Nullable="true" />
+    <Property Name="UserId" Type="int" Nullable="true" />
+    <Property Name="Paid" Type="bit" Nullable="true" />
+    <Property Name="FactorNo" Type="int" Nullable="true" />
+    <Property Name="Image_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Image_Name_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_M" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Path_S" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Factors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Buyer_Id" Type="int" Nullable="true" />
+    <Property Name="amount" Type="int" Nullable="true" />
+    <Property Name="DateOfPay" Type="datetime" Nullable="true" />
+    <Property Name="PDateOfPay" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TimeOfPay" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Financial_confirmation" Type="bit" Nullable="true" />
+    <Property Name="Anbar_confirmation" Type="bit" Nullable="true" />
+    <Property Name="Paid" Type="bit" Nullable="true" />
+    <Property Name="Posted" Type="bit" Nullable="true" />
+    <Property Name="Delivered" Type="bit" Nullable="true" />
+    <Property Name="Pay_Id" Type="int" Nullable="true" />
+    <Property Name="Maliat" Type="int" Nullable="true" />
+    <Property Name="Shipping_cost" Type="int" Nullable="true" />
+    <Property Name="PayMethod" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Tracking_Code" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Det_comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_id" Type="int" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Des" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="true" />
+    <Property Name="PDate" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Checked" Type="bit" Nullable="true" />
+    <Property Name="Block" Type="bit" Nullable="true" />
+    <Property Name="Time" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Publish" Type="bit" Nullable="true" />
+    <Property Name="Detail_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_inboxes_Users">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="inbox" Type="Model.Store.inboxes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="inbox">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outbox_Users">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Outbox" Type="Model.Store.Outboxes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Outbox">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserPayment">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Payment" Type="Model.Store.Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Userpolice">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="police" Type="Model.Store.police" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="police">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserFav">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1" />
+    <End Role="Fav" Type="Model.Store.Favs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Fav">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserDateTime">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DateTime" Type="Model.Store.DateTimes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DateTime">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserSupport">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Support" Type="Model.Store.Supports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Support">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserKala">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Kala" Type="Model.Store.Kalas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Kala">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Kalacomment">
+    <End Role="Kala" Type="Model.Store.Kalas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="comment" Type="Model.Store.comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kala">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="comment">
+        <PropertyRef Name="Kala_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserGroup">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Group" Type="Model.Store.Groups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserDownloadGroup">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DownloadGroup" Type="Model.Store.DownloadGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DownloadGroup">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DownloadGroupStandard">
+    <End Role="DownloadGroup" Type="Model.Store.DownloadGroups" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Standard" Type="Model.Store.Downloads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DownloadGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Standard">
+        <PropertyRef Name="DownloadGroup_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GalleryAX">
+    <End Role="Gallery" Type="Model.Store.Galleries" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AX" Type="Model.Store.AXes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gallery">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AX">
+        <PropertyRef Name="Gallery_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserGallery">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Gallery" Type="Model.Store.Galleries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Gallery">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserAbout">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="About" Type="Model.Store.Abouts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="About">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserLinks">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Links" Type="Model.Store.Links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Links">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KalaKalaImage">
+    <End Role="Kala" Type="Model.Store.Kalas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="KalaImage" Type="Model.Store.KalaImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kala">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="KalaImage">
+        <PropertyRef Name="Kala_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GroupSubGroup">
+    <End Role="Group" Type="Model.Store.Groups" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SubGroup" Type="Model.Store.SubGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubGroup">
+        <PropertyRef Name="Group_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubGroupDetail">
+    <End Role="SubGroup" Type="Model.Store.SubGroups" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Detail" Type="Model.Store.Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Detail">
+        <PropertyRef Name="SubGroup_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DetailPhoto">
+    <End Role="Detail" Type="Model.Store.Details" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Photo" Type="Model.Store.Photos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Detail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="Detail_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserBalance">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Balance" Type="Model.Store.Balances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Balance">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PhotoPhoto_comment">
+    <End Role="Photo" Type="Model.Store.Photos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Photo_comment" Type="Model.Store.Photo_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Photo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Photo_comment">
+        <PropertyRef Name="Photo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubGroupSub_comment">
+    <End Role="SubGroup" Type="Model.Store.SubGroups" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sub_comment" Type="Model.Store.Sub_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sub_comment">
+        <PropertyRef Name="SubGroup_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserBasket">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Basket" Type="Model.Store.Baskets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserFactor">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Factor" Type="Model.Store.Factors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Factor">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DetailDet_comment">
+    <End Role="Detail" Type="Model.Store.Details" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Det_comment" Type="Model.Store.Det_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Detail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Det_comment">
+        <PropertyRef Name="Detail_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Model.User" />
+          <EntitySet Name="inboxes" EntityType="Model.inbox" />
+          <AssociationSet Name="FK_inboxes_Users" Association="Model.FK_inboxes_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="inbox" EntitySet="inboxes" />
+          </AssociationSet>
+          <EntitySet Name="Outboxes" EntityType="Model.Outbox" />
+          <AssociationSet Name="FK_Outbox_Users" Association="Model.FK_Outbox_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Outbox" EntitySet="Outboxes" />
+          </AssociationSet>
+          <EntitySet Name="Payments" EntityType="Model.Payment" />
+          <AssociationSet Name="UserPayment" Association="Model.UserPayment">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <EntitySet Name="police" EntityType="Model.police" />
+          <AssociationSet Name="Userpolice" Association="Model.Userpolice">
+            <End Role="User" EntitySet="Users" />
+            <End Role="police" EntitySet="police" />
+          </AssociationSet>
+          <EntitySet Name="Favs" EntityType="Model.Fav" />
+          <AssociationSet Name="UserFav" Association="Model.UserFav">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Fav" EntitySet="Favs" />
+          </AssociationSet>
+          <EntitySet Name="DateTimes" EntityType="Model.DateTime" />
+          <AssociationSet Name="UserDateTime" Association="Model.UserDateTime">
+            <End Role="User" EntitySet="Users" />
+            <End Role="DateTime" EntitySet="DateTimes" />
+          </AssociationSet>
+          <EntitySet Name="Supports" EntityType="Model.Support" />
+          <AssociationSet Name="UserSupport" Association="Model.UserSupport">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Support" EntitySet="Supports" />
+          </AssociationSet>
+          <EntitySet Name="Kalas" EntityType="Model.Kala" />
+          <AssociationSet Name="UserKala" Association="Model.UserKala">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Kala" EntitySet="Kalas" />
+          </AssociationSet>
+          <EntitySet Name="comments" EntityType="Model.comment" />
+          <AssociationSet Name="Kalacomment" Association="Model.Kalacomment">
+            <End Role="Kala" EntitySet="Kalas" />
+            <End Role="comment" EntitySet="comments" />
+          </AssociationSet>
+          <EntitySet Name="Groups" EntityType="Model.Group" />
+          <AssociationSet Name="UserGroup" Association="Model.UserGroup">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Group" EntitySet="Groups" />
+          </AssociationSet>
+          <EntitySet Name="Downloads" EntityType="Model.Download" />
+          <EntitySet Name="DownloadGroups" EntityType="Model.DownloadGroup" />
+          <AssociationSet Name="UserDownloadGroup" Association="Model.UserDownloadGroup">
+            <End Role="User" EntitySet="Users" />
+            <End Role="DownloadGroup" EntitySet="DownloadGroups" />
+          </AssociationSet>
+          <AssociationSet Name="DownloadGroupStandard" Association="Model.DownloadGroupStandard">
+            <End Role="DownloadGroup" EntitySet="DownloadGroups" />
+            <End Role="Standard" EntitySet="Downloads" />
+          </AssociationSet>
+          <EntitySet Name="Galleries" EntityType="Model.Gallery" />
+          <EntitySet Name="AXes" EntityType="Model.AX" />
+          <AssociationSet Name="GalleryAX" Association="Model.GalleryAX">
+            <End Role="Gallery" EntitySet="Galleries" />
+            <End Role="AX" EntitySet="AXes" />
+          </AssociationSet>
+          <AssociationSet Name="UserGallery" Association="Model.UserGallery">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Gallery" EntitySet="Galleries" />
+          </AssociationSet>
+          <EntitySet Name="Abouts" EntityType="Model.About" />
+          <AssociationSet Name="UserAbout" Association="Model.UserAbout">
+            <End EntitySet="Users" Role="User" />
+            <End EntitySet="Abouts" Role="About" />
+          </AssociationSet>
+          <EntitySet Name="Links" EntityType="Model.Links" />
+          <AssociationSet Name="UserLinks" Association="Model.UserLinks">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Links" EntitySet="Links" />
+          </AssociationSet>
+          <EntitySet Name="KalaImages" EntityType="Model.KalaImage" />
+          <AssociationSet Name="KalaKalaImage" Association="Model.KalaKalaImage">
+            <End Role="Kala" EntitySet="Kalas" />
+            <End Role="KalaImage" EntitySet="KalaImages" />
+          </AssociationSet>
+          <EntitySet Name="SubGroups" EntityType="Model.SubGroup" />
+          <EntitySet Name="Details" EntityType="Model.Detail" />
+          <EntitySet Name="Photos" EntityType="Model.Photo" />
+          <AssociationSet Name="GroupSubGroup" Association="Model.GroupSubGroup">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="SubGroup" EntitySet="SubGroups" />
+          </AssociationSet>
+          <AssociationSet Name="SubGroupDetail" Association="Model.SubGroupDetail">
+            <End Role="SubGroup" EntitySet="SubGroups" />
+            <End Role="Detail" EntitySet="Details" />
+          </AssociationSet>
+          <AssociationSet Name="DetailPhoto" Association="Model.DetailPhoto">
+            <End Role="Detail" EntitySet="Details" />
+            <End Role="Photo" EntitySet="Photos" />
+          </AssociationSet>
+          <EntitySet Name="Balances" EntityType="Model.Balance" />
+          <AssociationSet Name="UserBalance" Association="Model.UserBalance">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Balance" EntitySet="Balances" />
+          </AssociationSet>
+          <EntitySet Name="Photo_comment" EntityType="Model.Photo_comment" />
+          <AssociationSet Name="PhotoPhoto_comment" Association="Model.PhotoPhoto_comment">
+            <End Role="Photo" EntitySet="Photos" />
+            <End Role="Photo_comment" EntitySet="Photo_comment" />
+          </AssociationSet>
+          <EntitySet Name="Sub_comment" EntityType="Model.Sub_comment" />
+          <AssociationSet Name="SubGroupSub_comment" Association="Model.SubGroupSub_comment">
+            <End Role="SubGroup" EntitySet="SubGroups" />
+            <End Role="Sub_comment" EntitySet="Sub_comment" />
+          </AssociationSet>
+          <EntitySet Name="Baskets" EntityType="Model.Basket" />
+          <AssociationSet Name="UserBasket" Association="Model.UserBasket">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Basket" EntitySet="Baskets" />
+          </AssociationSet>
+          <EntitySet Name="Factors" EntityType="Model.Factor" />
+          <AssociationSet Name="UserFactor" Association="Model.UserFactor">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Factor" EntitySet="Factors" />
+          </AssociationSet>
+          <EntitySet Name="Det_comment" EntityType="Model.Det_comment" />
+          <AssociationSet Name="DetailDet_comment" Association="Model.DetailDet_comment">
+            <End Role="Detail" EntitySet="Details" />
+            <End Role="Det_comment" EntitySet="Det_comment" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" />
+          <Property Type="String" Name="Pass" Nullable="false" />
+          <NavigationProperty Name="inboxes" Relationship="Model.FK_inboxes_Users" FromRole="User" ToRole="inbox" />
+          <NavigationProperty Name="Outboxes" Relationship="Model.FK_Outbox_Users" FromRole="User" ToRole="Outbox" />
+          <NavigationProperty Name="Payments" Relationship="Model.UserPayment" FromRole="User" ToRole="Payment" />
+          <Property Type="String" Name="Code" />
+          <Property Type="String" Name="Role" />
+          <NavigationProperty Name="police" Relationship="Model.Userpolice" FromRole="User" ToRole="police" />
+          <NavigationProperty Name="Favs" Relationship="Model.UserFav" FromRole="User" ToRole="Fav" />
+          <Property Type="Guid" Name="GU_ID" Nullable="false" />
+          <NavigationProperty Name="DateTimes" Relationship="Model.UserDateTime" FromRole="User" ToRole="DateTime" />
+          <Property Type="Boolean" Name="Block" Nullable="true" />
+          <NavigationProperty Name="Supports" Relationship="Model.UserSupport" FromRole="User" ToRole="Support" />
+          <NavigationProperty Name="Kalas" Relationship="Model.UserKala" FromRole="User" ToRole="Kala" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="Tel" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="Binary" Name="Image" />
+          <NavigationProperty Name="Groups" Relationship="Model.UserGroup" FromRole="User" ToRole="Group" />
+          <NavigationProperty Name="DownloadGroups" Relationship="Model.UserDownloadGroup" FromRole="User" ToRole="DownloadGroup" />
+          <NavigationProperty Name="Galleries" Relationship="Model.UserGallery" FromRole="User" ToRole="Gallery" />
+          <NavigationProperty Name="Abouts" Relationship="Model.UserAbout" FromRole="User" ToRole="About" />
+          <NavigationProperty Name="Links" Relationship="Model.UserLinks" FromRole="User" ToRole="Links" />
+          <Property Type="String" Name="PDate" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Balances" Relationship="Model.UserBalance" FromRole="User" ToRole="Balance" />
+          <Property Type="Boolean" Name="Rss" />
+          <NavigationProperty Name="Baskets" Relationship="Model.UserBasket" FromRole="User" ToRole="Basket" />
+          <Property Type="String" Name="Address" />
+          <NavigationProperty Name="Factors" Relationship="Model.UserFactor" FromRole="User" ToRole="Factor" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="String" Name="Path" />
+          <Property Type="String" Name="Image_Cover" />
+          <Property Type="String" Name="Path_Cover" />
+          <Property Type="String" Name="Position" />
+          <Property Type="String" Name="Des" />
+          <Property Type="Boolean" Name="ConfirmImage" />
+          <Property Type="Boolean" Name="ConfirmCover" />
+        </EntityType>
+        <EntityType Name="inbox">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="From_ID" />
+          <Property Type="String" Name="Title" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Des" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Model.FK_inboxes_Users" FromRole="inbox" ToRole="User" />
+          <Property Type="String" Name="Date" />
+          <Property Type="Guid" Name="U_ID" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="PDate" />
+        </EntityType>
+        <Association Name="FK_inboxes_Users">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.inbox" Role="inbox" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="inbox">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Outbox">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" annotation:StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Type="Guid" Name="To_ID" Nullable="false" />
+          <Property Type="String" Name="Title" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Des" Unicode="true" FixedLength="false" MaxLength="Max" />
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Model.FK_Outbox_Users" FromRole="Outbox" ToRole="User" />
+          <Property Type="String" Name="Date" />
+          <Property Type="Guid" Name="U_ID" Nullable="false" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="PDate" />
+        </EntityType>
+        <Association Name="FK_Outbox_Users">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Outbox" Role="Outbox" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Outbox">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BankName" />
+          <Property Type="String" Name="PayMethod" />
+          <Property Type="String" Name="SerialNo" />
+          <Property Type="Single" Name="Service" />
+          <Property Type="String" Name="CardNo" />
+          <Property Type="Byte" Name="Pay_d" />
+          <Property Type="Byte" Name="Pay_m" />
+          <Property Type="Int16" Name="Pay_y" />
+          <Property Type="String" Name="Tel" />
+          <Property Type="String" Name="Des" />
+          <NavigationProperty Name="User" Relationship="Model.UserPayment" FromRole="Payment" ToRole="User" />
+          <Property Type="Guid" Name="U_ID" Nullable="false" />
+          <Property Type="Boolean" Name="Confermed" />
+          <Property Type="Guid" Name="Accepted_ID" />
+          <Property Type="String" Name="Accepted_Date" />
+          <Property Type="String" Name="UserName" />
+          <Property Type="Int32" Name="Bonus" />
+          <Property Type="Int32" Name="Bedehkar" DefaultValue="0" />
+          <Property Type="Int32" Name="Bestankar" DefaultValue="0" />
+          <Property Type="Int32" Name="Balance" DefaultValue="0" Nullable="false" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="Time" />
+          <Property Type="String" Name="PDate" Nullable="false" />
+          <Property Type="Int32" Name="Factor_No" />
+        </EntityType>
+        <Association Name="UserPayment">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Payment" Role="Payment" Multiplicity="*" />
+        </Association>
+        <EntityType Name="police">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="From_ID" Nullable="false" />
+          <Property Type="String" Name="Title" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Des" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Date" />
+          <Property Type="Guid" Name="For_ID" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Model.Userpolice" FromRole="police" ToRole="User" />
+          <Property Type="Boolean" Name="Visited" />
+          <Property Type="String" Name="PDate" />
+        </EntityType>
+        <Association Name="Userpolice">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.police" Role="police" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Fav">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="FavID" />
+          <NavigationProperty Name="User" Relationship="Model.UserFav" FromRole="Fav" ToRole="User" />
+          <Property Type="String" Name="Des" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="String" Name="Path" />
+        </EntityType>
+        <Association Name="UserFav">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.Fav" Role="Fav" Multiplicity="*" />
+        </Association>
+        <EntityType Name="DateTime">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="Model.UserDateTime" FromRole="DateTime" ToRole="User" />
+          <Property Type="DateTime" Name="Start" />
+          <Property Type="DateTime" Name="End" />
+          <Property Type="Guid" Name="U_ID" />
+          <Property Type="String" Name="P_Start" />
+          <Property Type="String" Name="P_End" />
+        </EntityType>
+        <Association Name="UserDateTime">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.DateTime" Role="DateTime" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Support">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="Sender" />
+          <Property Type="String" Name="Title" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" />
+          <Property Type="String" Name="Date" />
+          <Property Type="Guid" Name="U_ID" Nullable="false" />
+          <Property Type="String" Name="Name" />
+          <NavigationProperty Name="User" Relationship="Model.UserSupport" FromRole="Support" ToRole="User" />
+          <Property Type="String" Name="Topic" />
+          <Property Type="Boolean" Name="visited" />
+          <Property Type="Int32" Name="Ticket_ID" DefaultValue="0" />
+          <Property Type="String" Name="Des" />
+          <Property Type="String" Name="Responser" />
+          <Property Type="String" Name="Answer" />
+        </EntityType>
+        <Association Name="UserSupport">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Support" Role="Support" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Kala">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" />
+          <Property Type="String" Name="Name" />
+          <Property Type="Int32" Name="Price1" />
+          <Property Type="Int32" Name="Price2" />
+          <Property Type="Binary" Name="Image" />
+          <Property Type="Binary" Name="Image_t" />
+          <Property Type="String" Name="Tel" />
+          <Property Type="String" Name="Fax" />
+          <Property Type="String" Name="Yid" />
+          <Property Type="String" Name="Ostan" />
+          <Property Type="String" Name="City" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="Boolean" Name="IsStock" />
+          <Property Type="Boolean" Name="Sold" />
+          <Property Type="Boolean" Name="Confirmed" />
+          <Property Type="String" Name="Group" />
+          <Property Type="String" Name="Email" />
+          <Property Type="Boolean" Name="Tahator" />
+          <Property Type="String" Name="T_Des" />
+          <Property Type="String" Name="Des" />
+          <NavigationProperty Name="User" Relationship="Model.UserKala" FromRole="Kala" ToRole="User" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="Boolean" Name="HaveAx" />
+          <NavigationProperty Name="comments" Relationship="Model.Kalacomment" FromRole="Kala" ToRole="comment" />
+          <NavigationProperty Name="KalaImages" Relationship="Model.KalaKalaImage" FromRole="Kala" ToRole="KalaImage" />
+          <Property Type="String" Name="SubGroup" />
+          <Property Type="String" Name="Status" />
+          <Property Type="String" Name="Exist" />
+          <Property Type="String" Name="Model" />
+          <Property Type="String" Name="Color" />
+          <Property Type="String" Name="Des2" />
+          <Property Type="String" Name="Des3" />
+          <Property Type="String" Name="Time" />
+          <Property Type="Int32" Name="BuyCount" />
+          <Property Type="Int32" Name="Click" />
+          <Property Type="String" Name="Category" />
+          <Property Type="String" Name="Brand" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="Int32" Name="Visit" DefaultValue="1" />
+          <Property Type="String" Name="Path" />
+          <Property Type="String" Name="Image_Name_M" />
+          <Property Type="String" Name="Image_Name_S" />
+          <Property Type="String" Name="Path_M" />
+          <Property Type="String" Name="Path_S" />
+        </EntityType>
+        <Association Name="UserKala">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Kala" Role="Kala" Multiplicity="*" />
+        </Association>
+        <EntityType Name="comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="Price" />
+          <Property Type="String" Name="Des" />
+          <NavigationProperty Name="Kala" Relationship="Model.Kalacomment" FromRole="comment" ToRole="Kala" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="Tel" />
+          <Property Type="Boolean" Name="Checked" />
+          <Property Type="Boolean" Name="Block" />
+          <Property Type="String" Name="Time" />
+          <Property Type="String" Name="PDate" />
+        </EntityType>
+        <Association Name="Kalacomment">
+          <End Type="Model.Kala" Role="Kala" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.comment" Role="comment" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="Model.UserGroup" FromRole="Group" ToRole="User" />
+          <Property Type="String" Name="Title" />
+          <Property Type="String" Name="Des" />
+          <Property Type="Binary" Name="Image" />
+          <Property Type="Binary" Name="Image_t" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="Time" />
+          <NavigationProperty Name="SubGroups" Relationship="Model.GroupSubGroup" FromRole="Group" ToRole="SubGroup" />
+          <Property Type="Int32" Name="Image_width" />
+          <Property Type="Int32" Name="Image_height" />
+          <Property Type="Int32" Name="Image_size" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="String" Name="Path" />
+          <Property Type="String" Name="Path_M" />
+          <Property Type="String" Name="Path_S" />
+          <Property Type="String" Name="Image_Name_M" />
+          <Property Type="String" Name="Image_Name_S" />
+        </EntityType>
+        <Association Name="UserGroup">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Group" Role="Group" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Download">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" />
+          <Property Type="Binary" Name="Image" />
+          <Property Type="String" Name="Add" />
+          <Property Type="String" Name="Name" />
+          <Property Type="Guid" Name="GUID" />
+          <Property Type="String" Name="Des" />
+          <Property Type="Int32" Name="Num" DefaultValue="0" />
+          <NavigationProperty Name="DownloadGroup" Relationship="Model.DownloadGroupStandard" FromRole="Standard" ToRole="DownloadGroup" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="Time" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PDate" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Price" DefaultValue="0" />
+          <Property Type="Binary" Name="Image_t" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="Int32" Name="Visit" DefaultValue="1" />
+          <Property Type="String" Name="Path" />
+          <Property Type="String" Name="Image_Name_M" />
+          <Property Type="String" Name="Image_Name_S" />
+          <Property Type="String" Name="Path_M" />
+          <Property Type="String" Name="Path_S" />
+        </EntityType>
+        <EntityType Name="DownloadGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" />
+          <Property Type="String" Name="Des" />
+          <Property Type="Binary" Name="Image" />
+          <Property Type="Binary" Name="Image_t" />
+          <NavigationProperty Name="User" Relationship="Model.UserDownloadGroup" FromRole="DownloadGroup" ToRole="User" />
+          <NavigationProperty Name="Downloads" Relationship="Model.DownloadGroupStandard" FromRole="DownloadGroup" ToRole="Standard" />
+          <Property Type="String" Name="PDate" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="Time" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="Int32" Name="Visit" DefaultValue="1" />
+          <Property Type="String" Name="Path" />
+        </EntityType>
+        <Association Name="UserDownloadGroup">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.DownloadGroup" Role="DownloadGroup" Multiplicity="*" />
+        </Association>
+        <Association Name="DownloadGroupStandard">
+          <End Type="Model.DownloadGroup" Role="DownloadGroup" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Download" Role="Standard" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" />
+          <Property Type="Binary" Name="Image" />
+          <Property Type="Binary" Name="Image_t" />
+          <Property Type="String" Name="Des" />
+          <NavigationProperty Name="AXes" Relationship="Model.GalleryAX" FromRole="Gallery" ToRole="AX" />
+          <NavigationProperty Name="User" Relationship="Model.UserGallery" FromRole="Gallery" ToRole="User" />
+          <Property Type="String" Name="Group" />
+          <Property Type="String" Name="Subgroup" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="String" Name="Time" />
+          <Property Type="Boolean" Name="Block" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="String" Name="Path" />
+          <Property Type="Int32" Name="Image_height" />
+          <Property Type="Int32" Name="Image_width" />
+          <Property Type="Int32" Name="Image_size" />
+          <Property Type="Int32" Name="Visit" DefaultValue="1" />
+          <Property Type="String" Name="Image_Name_M" />
+          <Property Type="String" Name="Image_Name_S" />
+          <Property Type="String" Name="Path_M" />
+          <Property Type="String" Name="Path_S" />
+        </EntityType>
+        <EntityType Name="AX">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Binary" Name="Image" />
+          <Property Type="Binary" Name="Image_t" />
+          <NavigationProperty Name="Gallery" Relationship="Model.GalleryAX" FromRole="AX" ToRole="Gallery" />
+          <Property Type="String" Name="Des" />
+          <Property Type="String" Name="Title" />
+          <Property Type="String" Name="Size" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="String" Name="Time" />
+          <Property Type="Boolean" Name="Block" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="Int32" Name="User_id" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="Path" />
+        </EntityType>
+        <Association Name="GalleryAX">
+          <End Type="Model.Gallery" Role="Gallery" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.AX" Role="AX" Multiplicity="*" />
+        </Association>
+        <Association Name="UserGallery">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Gallery" Role="Gallery" Multiplicity="*" />
+        </Association>
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="Title" Type="String" />
+          <Property Name="Des" Type="String" />
+          <Property Name="Image" Type="Binary" />
+          <Property Name="Image_t" Type="Binary" />
+          <NavigationProperty Name="User" Relationship="Model.UserAbout" FromRole="About" ToRole="User" />
+          <Property Name="Image_Name" Type="String" />
+          <Property Name="Path" Type="String" />
+        </EntityType>
+        <Association Name="UserAbout">
+          <End Type="Model.User" Multiplicity="1" Role="User">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.About" Multiplicity="*" Role="About" />
+        </Association>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Add" />
+          <Property Type="String" Name="Title" />
+          <Property Type="Binary" Name="Image" />
+          <Property Type="Binary" Name="Image_t" />
+          <NavigationProperty Name="User" Relationship="Model.UserLinks" FromRole="Links" ToRole="User" />
+          <Property Type="String" Name="Image_Name" Nullable="false" />
+          <Property Type="String" Name="Path" Nullable="false" />
+        </EntityType>
+        <Association Name="UserLinks">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Links" Role="Links" Multiplicity="*" />
+        </Association>
+        <EntityType Name="KalaImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Binary" Name="Image" />
+          <Property Type="Binary" Name="Image_t" />
+          <NavigationProperty Name="Kala" Relationship="Model.KalaKalaImage" FromRole="KalaImage" ToRole="Kala" />
+          <Property Type="String" Name="Title" />
+          <Property Type="String" Name="Des" />
+          <Property Type="Binary" Name="Image_b" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="Int32" Name="Visit" DefaultValue="1" />
+          <Property Type="String" Name="Path" />
+          <Property Type="String" Name="Image_Name_M" />
+          <Property Type="String" Name="Image_Name_S" />
+          <Property Type="String" Name="Path_M" />
+          <Property Type="String" Name="Path_S" />
+        </EntityType>
+        <Association Name="KalaKalaImage">
+          <End Type="Model.Kala" Role="Kala" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.KalaImage" Role="KalaImage" Multiplicity="*" />
+        </Association>
+        <EntityType Name="SubGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" />
+          <Property Type="String" Name="Des" />
+          <Property Type="Binary" Name="Image" />
+          <Property Type="Binary" Name="Image_t" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="Time" />
+          <NavigationProperty Name="Group" Relationship="Model.GroupSubGroup" FromRole="SubGroup" ToRole="Group" />
+          <NavigationProperty Name="Details" Relationship="Model.SubGroupDetail" FromRole="SubGroup" ToRole="Detail" />
+          <Property Type="Boolean" Name="Rss" />
+          <NavigationProperty Name="Sub_comment" Relationship="Model.SubGroupSub_comment" FromRole="SubGroup" ToRole="Sub_comment" />
+          <Property Type="Binary" Name="Image_b" />
+          <Property Type="String" Name="Agent" />
+          <Property Type="Int32" Name="Visit" DefaultValue="1" />
+          <Property Type="Int32" Name="Image_width" />
+          <Property Type="Int32" Name="Image_height" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="String" Name="Path" />
+          <Property Type="Int32" Name="Image_size" />
+          <Property Type="String" Name="Path_M" />
+          <Property Type="String" Name="Path_S" />
+          <Property Type="String" Name="Image_Name_M" />
+          <Property Type="String" Name="Image_Name_S" />
+          <Property Type="Boolean" Name="Publish" />
+          <Property Type="String" Name="GroupName" />
+          <Property Type="String" Name="SubgroupName" />
+        </EntityType>
+        <EntityType Name="Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" />
+          <Property Type="String" Name="Des" />
+          <Property Type="Binary" Name="Image" />
+          <Property Type="Binary" Name="Image_t" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="Time" />
+          <NavigationProperty Name="SubGroup" Relationship="Model.SubGroupDetail" FromRole="Detail" ToRole="SubGroup" />
+          <NavigationProperty Name="Photos" Relationship="Model.DetailPhoto" FromRole="Detail" ToRole="Photo" />
+          <Property Type="Boolean" Name="Rss" />
+          <Property Type="Binary" Name="Image_b" />
+          <Property Type="Int32" Name="Image_width" />
+          <Property Type="Int32" Name="Image_size" />
+          <Property Type="String" Name="Path" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="Int32" Name="Image_height" />
+          <Property Type="Int32" Name="Visit" DefaultValue="1" />
+          <Property Type="String" Name="Path_M" />
+          <Property Type="String" Name="Path_S" />
+          <Property Type="String" Name="Image_Name_M" />
+          <Property Type="String" Name="Image_Name_S" />
+          <NavigationProperty Name="Det_comment" Relationship="Model.DetailDet_comment" FromRole="Detail" ToRole="Det_comment" />
+          <Property Type="Boolean" Name="Publish" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="Title" Type="String" />
+          <Property Name="Des" Type="String" />
+          <Property Name="Image" Type="Binary" />
+          <Property Name="Image_t" Type="Binary" />
+          <Property Name="PDate" Type="String" />
+          <Property Name="Date" Type="DateTime" />
+          <Property Name="Time" Type="String" />
+          <Property Name="Size" Type="Int32" />
+          <NavigationProperty Name="Detail" Relationship="Model.DetailPhoto" FromRole="Photo" ToRole="Detail" />
+          <Property Type="Boolean" Name="Rss" />
+          <NavigationProperty Name="Photo_comment" Relationship="Model.PhotoPhoto_comment" FromRole="Photo" ToRole="Photo_comment" />
+          <Property Type="Int32" Name="Image_width" />
+          <Property Type="Int32" Name="Image_size" />
+          <Property Type="String" Name="Path" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="Int32" Name="Image_height" />
+          <Property Type="Int32" Name="Visit" DefaultValue="1" />
+          <Property Type="String" Name="Path_M" />
+          <Property Type="String" Name="Path_S" />
+          <Property Type="String" Name="Image_Name_M" />
+          <Property Type="String" Name="Image_Name_S" />
+          <Property Type="Boolean" Name="Publish" />
+        </EntityType>
+        <Association Name="GroupSubGroup">
+          <End Type="Model.Group" Role="Group" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.SubGroup" Role="SubGroup" Multiplicity="*" />
+        </Association>
+        <Association Name="SubGroupDetail">
+          <End Type="Model.SubGroup" Role="SubGroup" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Detail" Role="Detail" Multiplicity="*" />
+        </Association>
+        <Association Name="DetailPhoto">
+          <End Type="Model.Detail" Role="Detail" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Photo" Role="Photo" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Balance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="Int32" Name="Remain" DefaultValue="0" />
+          <NavigationProperty Name="User" Relationship="Model.UserBalance" FromRole="Balance" ToRole="User" />
+        </EntityType>
+        <Association Name="UserBalance">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Balance" Role="Balance" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="Photo_comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="User_id" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="Des" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="Boolean" Name="Checked" />
+          <Property Type="Boolean" Name="Block" />
+          <NavigationProperty Name="Photo" Relationship="Model.PhotoPhoto_comment" FromRole="Photo_comment" ToRole="Photo" />
+          <Property Type="String" Name="Time" />
+          <Property Type="Boolean" Name="Publish" />
+        </EntityType>
+        <Association Name="PhotoPhoto_comment">
+          <End Type="Model.Photo" Role="Photo" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Photo_comment" Role="Photo_comment" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Sub_comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="User_id" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="Des" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="Boolean" Name="Checked" />
+          <Property Type="Boolean" Name="Block" />
+          <Property Type="String" Name="Time" />
+          <NavigationProperty Name="SubGroup" Relationship="Model.SubGroupSub_comment" FromRole="Sub_comment" ToRole="SubGroup" />
+          <Property Type="Boolean" Name="Publish" />
+        </EntityType>
+        <Association Name="SubGroupSub_comment">
+          <End Type="Model.SubGroup" Role="SubGroup" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Sub_comment" Role="Sub_comment" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Basket">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="kala_id" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="Time" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="Int16" Name="Count" />
+          <NavigationProperty Name="User" Relationship="Model.UserBasket" FromRole="Basket" ToRole="User" />
+          <Property Type="String" Name="Name" />
+          <Property Type="Binary" Name="Image_t" />
+          <Property Type="Int32" Name="Price1" />
+          <Property Type="Int32" Name="Price2" />
+          <Property Type="Boolean" Name="Delivered" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="Boolean" Name="Paid" />
+          <Property Type="Int32" Name="FactorNo" />
+          <Property Type="String" Name="Image_Name" />
+          <Property Type="String" Name="Path" />
+          <Property Type="String" Name="Image_Name_M" />
+          <Property Type="String" Name="Image_Name_S" />
+          <Property Type="String" Name="Path_M" />
+          <Property Type="String" Name="Path_S" />
+        </EntityType>
+        <Association Name="UserBasket">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Basket" Role="Basket" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Factor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Number" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="String" Name="Time" />
+          <Property Type="Int32" Name="Buyer_Id" />
+          <Property Type="Int32" Name="amount" />
+          <Property Type="DateTime" Name="DateOfPay" />
+          <Property Type="String" Name="PDateOfPay" />
+          <Property Type="String" Name="TimeOfPay" />
+          <Property Type="Boolean" Name="Financial_confirmation" />
+          <Property Type="Boolean" Name="Anbar_confirmation" />
+          <Property Type="Boolean" Name="Paid" />
+          <Property Type="Boolean" Name="Posted" />
+          <Property Type="Boolean" Name="Delivered" />
+          <Property Type="Int32" Name="Pay_Id" />
+          <Property Type="Int32" Name="Maliat" />
+          <Property Type="Int32" Name="Shipping_cost" />
+          <Property Type="String" Name="PayMethod" />
+          <NavigationProperty Name="User" Relationship="Model.UserFactor" FromRole="Factor" ToRole="User" />
+          <Property Type="String" Name="Tracking_Code" />
+        </EntityType>
+        <Association Name="UserFactor">
+          <End Type="Model.User" Role="User" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Factor" Role="Factor" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Det_comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="User_id" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="Des" />
+          <Property Type="DateTime" Name="Date" />
+          <Property Type="String" Name="PDate" />
+          <Property Type="Boolean" Name="Checked" />
+          <Property Type="Boolean" Name="Block" />
+          <Property Type="String" Name="Time" />
+          <NavigationProperty Name="Detail" Relationship="Model.DetailDet_comment" FromRole="Det_comment" ToRole="Detail" />
+          <Property Type="Boolean" Name="Publish" />
+        </EntityType>
+        <Association Name="DetailDet_comment">
+          <End Type="Model.Detail" Role="Detail" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.Det_comment" Role="Det_comment" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ModelContainer">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="GU_ID" ColumnName="GU_ID" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Rss" ColumnName="Rss" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Image_Cover" ColumnName="Image_Cover" />
+          <ScalarProperty Name="Path_Cover" ColumnName="Path_Cover" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="ConfirmImage" ColumnName="ConfirmImage" />
+          <ScalarProperty Name="ConfirmCover" ColumnName="ConfirmCover" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inboxes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.inbox)">
+        <MappingFragment StoreEntitySet="inboxes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="From_ID" ColumnName="From_ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Outboxes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Outbox)">
+        <MappingFragment StoreEntitySet="Outboxes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="To_ID" ColumnName="To_ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Payment)">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="PayMethod" ColumnName="PayMethod" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="Pay_d" ColumnName="Pay_d" />
+          <ScalarProperty Name="Pay_m" ColumnName="Pay_m" />
+          <ScalarProperty Name="Pay_y" ColumnName="Pay_y" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="Confermed" ColumnName="Confermed" />
+          <ScalarProperty Name="Accepted_ID" ColumnName="Accepted_ID" />
+          <ScalarProperty Name="Accepted_Date" ColumnName="Accepted_Date" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+          <ScalarProperty Name="Bedehkar" ColumnName="Bedehkar" />
+          <ScalarProperty Name="Bestankar" ColumnName="Bestankar" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Factor_No" ColumnName="Factor_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="police">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.police)">
+        <MappingFragment StoreEntitySet="police">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="From_ID" ColumnName="From_ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="For_ID" ColumnName="For_ID" />
+          <ScalarProperty Name="Visited" ColumnName="Visited" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Fav)">
+        <MappingFragment StoreEntitySet="Favs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FavID" ColumnName="FavID" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DateTimes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.DateTime)">
+        <MappingFragment StoreEntitySet="DateTimes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="End" ColumnName="End" />
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="P_Start" ColumnName="P_Start" />
+          <ScalarProperty Name="P_End" ColumnName="P_End" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supports">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Support)">
+        <MappingFragment StoreEntitySet="Supports">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="U_ID" ColumnName="U_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Topic" ColumnName="Topic" />
+          <ScalarProperty Name="visited" ColumnName="visited" />
+          <ScalarProperty Name="Ticket_ID" ColumnName="Ticket_ID" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Responser" ColumnName="Responser" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kalas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Kala)">
+        <MappingFragment StoreEntitySet="Kalas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price1" ColumnName="Price1" />
+          <ScalarProperty Name="Price2" ColumnName="Price2" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Yid" ColumnName="Yid" />
+          <ScalarProperty Name="Ostan" ColumnName="Ostan" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IsStock" ColumnName="IsStock" />
+          <ScalarProperty Name="Sold" ColumnName="Sold" />
+          <ScalarProperty Name="Confirmed" ColumnName="Confirmed" />
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tahator" ColumnName="Tahator" />
+          <ScalarProperty Name="T_Des" ColumnName="T_Des" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="HaveAx" ColumnName="HaveAx" />
+          <ScalarProperty Name="SubGroup" ColumnName="SubGroup" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Exist" ColumnName="Exist" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Des2" ColumnName="Des2" />
+          <ScalarProperty Name="Des3" ColumnName="Des3" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="BuyCount" ColumnName="BuyCount" />
+          <ScalarProperty Name="Click" ColumnName="Click" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Visit" ColumnName="Visit" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Image_Name_M" ColumnName="Image_Name_M" />
+          <ScalarProperty Name="Image_Name_S" ColumnName="Image_Name_S" />
+          <ScalarProperty Name="Path_M" ColumnName="Path_M" />
+          <ScalarProperty Name="Path_S" ColumnName="Path_S" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comments">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.comment)">
+        <MappingFragment StoreEntitySet="comments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Checked" ColumnName="Checked" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Group)">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Image_width" ColumnName="Image_width" />
+          <ScalarProperty Name="Image_height" ColumnName="Image_height" />
+          <ScalarProperty Name="Image_size" ColumnName="Image_size" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Path_M" ColumnName="Path_M" />
+          <ScalarProperty Name="Path_S" ColumnName="Path_S" />
+          <ScalarProperty Name="Image_Name_M" ColumnName="Image_Name_M" />
+          <ScalarProperty Name="Image_Name_S" ColumnName="Image_Name_S" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Downloads">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Download)">
+        <MappingFragment StoreEntitySet="Downloads">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Add" ColumnName="Add" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Num" ColumnName="Num" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Visit" ColumnName="Visit" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Image_Name_M" ColumnName="Image_Name_M" />
+          <ScalarProperty Name="Image_Name_S" ColumnName="Image_Name_S" />
+          <ScalarProperty Name="Path_M" ColumnName="Path_M" />
+          <ScalarProperty Name="Path_S" ColumnName="Path_S" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DownloadGroups">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.DownloadGroup)">
+        <MappingFragment StoreEntitySet="DownloadGroups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Visit" ColumnName="Visit" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Galleries">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Gallery)">
+        <MappingFragment StoreEntitySet="Galleries">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="Subgroup" ColumnName="Subgroup" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Image_height" ColumnName="Image_height" />
+          <ScalarProperty Name="Image_width" ColumnName="Image_width" />
+          <ScalarProperty Name="Image_size" ColumnName="Image_size" />
+          <ScalarProperty Name="Visit" ColumnName="Visit" />
+          <ScalarProperty Name="Image_Name_M" ColumnName="Image_Name_M" />
+          <ScalarProperty Name="Image_Name_S" ColumnName="Image_Name_S" />
+          <ScalarProperty Name="Path_M" ColumnName="Path_M" />
+          <ScalarProperty Name="Path_S" ColumnName="Path_S" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AXes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AX)">
+        <MappingFragment StoreEntitySet="AXes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Abouts">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.About)">
+        <MappingFragment StoreEntitySet="Abouts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Links">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Links)">
+        <MappingFragment StoreEntitySet="Links">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Add" ColumnName="Add" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KalaImages">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.KalaImage)">
+        <MappingFragment StoreEntitySet="KalaImages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Image_b" ColumnName="Image_b" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Visit" ColumnName="Visit" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Image_Name_M" ColumnName="Image_Name_M" />
+          <ScalarProperty Name="Image_Name_S" ColumnName="Image_Name_S" />
+          <ScalarProperty Name="Path_M" ColumnName="Path_M" />
+          <ScalarProperty Name="Path_S" ColumnName="Path_S" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubGroups">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.SubGroup)">
+        <MappingFragment StoreEntitySet="SubGroups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Rss" ColumnName="Rss" />
+          <ScalarProperty Name="Image_b" ColumnName="Image_b" />
+          <ScalarProperty Name="Agent" ColumnName="Agent" />
+          <ScalarProperty Name="Visit" ColumnName="Visit" />
+          <ScalarProperty Name="Image_width" ColumnName="Image_width" />
+          <ScalarProperty Name="Image_height" ColumnName="Image_height" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Image_size" ColumnName="Image_size" />
+          <ScalarProperty Name="Path_M" ColumnName="Path_M" />
+          <ScalarProperty Name="Path_S" ColumnName="Path_S" />
+          <ScalarProperty Name="Image_Name_M" ColumnName="Image_Name_M" />
+          <ScalarProperty Name="Image_Name_S" ColumnName="Image_Name_S" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="SubgroupName" ColumnName="SubgroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Detail)">
+        <MappingFragment StoreEntitySet="Details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Rss" ColumnName="Rss" />
+          <ScalarProperty Name="Image_b" ColumnName="Image_b" />
+          <ScalarProperty Name="Image_width" ColumnName="Image_width" />
+          <ScalarProperty Name="Image_size" ColumnName="Image_size" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Image_height" ColumnName="Image_height" />
+          <ScalarProperty Name="Visit" ColumnName="Visit" />
+          <ScalarProperty Name="Path_M" ColumnName="Path_M" />
+          <ScalarProperty Name="Path_S" ColumnName="Path_S" />
+          <ScalarProperty Name="Image_Name_M" ColumnName="Image_Name_M" />
+          <ScalarProperty Name="Image_Name_S" ColumnName="Image_Name_S" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Photos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Photo)">
+        <MappingFragment StoreEntitySet="Photos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Rss" ColumnName="Rss" />
+          <ScalarProperty Name="Image_width" ColumnName="Image_width" />
+          <ScalarProperty Name="Image_size" ColumnName="Image_size" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Image_height" ColumnName="Image_height" />
+          <ScalarProperty Name="Visit" ColumnName="Visit" />
+          <ScalarProperty Name="Path_M" ColumnName="Path_M" />
+          <ScalarProperty Name="Path_S" ColumnName="Path_S" />
+          <ScalarProperty Name="Image_Name_M" ColumnName="Image_Name_M" />
+          <ScalarProperty Name="Image_Name_S" ColumnName="Image_Name_S" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Balances">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Balance)">
+        <MappingFragment StoreEntitySet="Balances">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Remain" ColumnName="Remain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Photo_comment">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Photo_comment)">
+        <MappingFragment StoreEntitySet="Photo_comment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Checked" ColumnName="Checked" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sub_comment">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Sub_comment)">
+        <MappingFragment StoreEntitySet="Sub_comment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Checked" ColumnName="Checked" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Baskets">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Basket)">
+        <MappingFragment StoreEntitySet="Baskets">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="kala_id" ColumnName="kala_id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image_t" ColumnName="Image_t" />
+          <ScalarProperty Name="Price1" ColumnName="Price1" />
+          <ScalarProperty Name="Price2" ColumnName="Price2" />
+          <ScalarProperty Name="Delivered" ColumnName="Delivered" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="FactorNo" ColumnName="FactorNo" />
+          <ScalarProperty Name="Image_Name" ColumnName="Image_Name" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Image_Name_M" ColumnName="Image_Name_M" />
+          <ScalarProperty Name="Image_Name_S" ColumnName="Image_Name_S" />
+          <ScalarProperty Name="Path_M" ColumnName="Path_M" />
+          <ScalarProperty Name="Path_S" ColumnName="Path_S" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Factors">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Factor)">
+        <MappingFragment StoreEntitySet="Factors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Buyer_Id" ColumnName="Buyer_Id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="DateOfPay" ColumnName="DateOfPay" />
+          <ScalarProperty Name="PDateOfPay" ColumnName="PDateOfPay" />
+          <ScalarProperty Name="TimeOfPay" ColumnName="TimeOfPay" />
+          <ScalarProperty Name="Financial_confirmation" ColumnName="Financial_confirmation" />
+          <ScalarProperty Name="Anbar_confirmation" ColumnName="Anbar_confirmation" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
+          <ScalarProperty Name="Delivered" ColumnName="Delivered" />
+          <ScalarProperty Name="Pay_Id" ColumnName="Pay_Id" />
+          <ScalarProperty Name="Maliat" ColumnName="Maliat" />
+          <ScalarProperty Name="Shipping_cost" ColumnName="Shipping_cost" />
+          <ScalarProperty Name="PayMethod" ColumnName="PayMethod" />
+          <ScalarProperty Name="Tracking_Code" ColumnName="Tracking_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Det_comment">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Det_comment)">
+        <MappingFragment StoreEntitySet="Det_comment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Des" ColumnName="Des" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PDate" ColumnName="PDate" />
+          <ScalarProperty Name="Checked" ColumnName="Checked" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UserPayment" TypeName="Model.UserPayment" StoreEntitySet="Payments">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Payment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Userpolice" TypeName="Model.Userpolice" StoreEntitySet="police">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="police">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserFav" TypeName="Model.UserFav" StoreEntitySet="Favs">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Fav">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserDateTime" TypeName="Model.UserDateTime" StoreEntitySet="DateTimes">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="DateTime">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserSupport" TypeName="Model.UserSupport" StoreEntitySet="Supports">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Support">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserKala" TypeName="Model.UserKala" StoreEntitySet="Kalas">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Kala">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Kalacomment" TypeName="Model.Kalacomment" StoreEntitySet="comments">
+      <EndProperty Name="Kala">
+        <ScalarProperty Name="Id" ColumnName="Kala_Id" />
+      </EndProperty>
+      <EndProperty Name="comment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserGroup" TypeName="Model.UserGroup" StoreEntitySet="Groups">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Group">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserDownloadGroup" TypeName="Model.UserDownloadGroup" StoreEntitySet="DownloadGroups">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="DownloadGroup">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DownloadGroupStandard" TypeName="Model.DownloadGroupStandard" StoreEntitySet="Downloads">
+      <EndProperty Name="DownloadGroup">
+        <ScalarProperty Name="Id" ColumnName="DownloadGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="Standard">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GalleryAX" TypeName="Model.GalleryAX" StoreEntitySet="AXes">
+      <EndProperty Name="Gallery">
+        <ScalarProperty Name="Id" ColumnName="Gallery_Id" />
+      </EndProperty>
+      <EndProperty Name="AX">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserGallery" TypeName="Model.UserGallery" StoreEntitySet="Galleries">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Gallery">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserAbout" TypeName="Model.UserAbout" StoreEntitySet="Abouts">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="About">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserLinks" TypeName="Model.UserLinks" StoreEntitySet="Links">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Links">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="KalaKalaImage" TypeName="Model.KalaKalaImage" StoreEntitySet="KalaImages">
+      <EndProperty Name="Kala">
+        <ScalarProperty Name="Id" ColumnName="Kala_Id" />
+      </EndProperty>
+      <EndProperty Name="KalaImage">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GroupSubGroup" TypeName="Model.GroupSubGroup" StoreEntitySet="SubGroups">
+      <EndProperty Name="Group">
+        <ScalarProperty Name="Id" ColumnName="Group_Id" />
+      </EndProperty>
+      <EndProperty Name="SubGroup">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SubGroupDetail" TypeName="Model.SubGroupDetail" StoreEntitySet="Details">
+      <EndProperty Name="SubGroup">
+        <ScalarProperty Name="Id" ColumnName="SubGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="Detail">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DetailPhoto" TypeName="Model.DetailPhoto" StoreEntitySet="Photos">
+      <EndProperty Name="Detail">
+        <ScalarProperty Name="Id" ColumnName="Detail_Id" />
+      </EndProperty>
+      <EndProperty Name="Photo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserBalance" TypeName="Model.UserBalance" StoreEntitySet="Balances">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Balance">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PhotoPhoto_comment" TypeName="Model.PhotoPhoto_comment" StoreEntitySet="Photo_comment">
+      <EndProperty Name="Photo">
+        <ScalarProperty Name="Id" ColumnName="Photo_Id" />
+      </EndProperty>
+      <EndProperty Name="Photo_comment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SubGroupSub_comment" TypeName="Model.SubGroupSub_comment" StoreEntitySet="Sub_comment">
+      <EndProperty Name="SubGroup">
+        <ScalarProperty Name="Id" ColumnName="SubGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="Sub_comment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserBasket" TypeName="Model.UserBasket" StoreEntitySet="Baskets">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Basket">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserFactor" TypeName="Model.UserFactor" StoreEntitySet="Factors">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Factor">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DetailDet_comment" TypeName="Model.DetailDet_comment" StoreEntitySet="Det_comment">
+      <EndProperty Name="Detail">
+        <ScalarProperty Name="Id" ColumnName="Detail_Id" />
+      </EndProperty>
+      <EndProperty Name="Det_comment">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Model" ZoomLevel="100" >
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="2.5" PointY="0.5" Height="7.3647265625" />
+        <EntityTypeShape EntityType="Model.inbox" Width="1.5" PointX="2.5" PointY="8.375" Height="2.9417936197916656" />
+        <AssociationConnector Association="Model.FK_inboxes_Users" >
+          <ConnectorPoint PointX="3.3515629999999996" PointY="7.6724251302083317" />
+          <ConnectorPoint PointX="3.3515629999999996" PointY="8.375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Outbox" Width="1.5" PointX="4.25" PointY="11.25" Height="2.9417936197916656" />
+        <AssociationConnector Association="Model.FK_Outbox_Users" >
+          <ConnectorPoint PointX="4" PointY="6.0333561197916676" />
+          <ConnectorPoint PointX="4.28125" PointY="6.0333561197916676" />
+          <ConnectorPoint PointX="4.28125" PointY="11.25" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Payment" Width="1.5" PointX="0.5" PointY="0.5" Height="5.8263151041666665" />
+        <AssociationConnector Association="Model.UserPayment">
+          <ConnectorPoint PointX="2.5" PointY="3.1241683261718749" />
+          <ConnectorPoint PointX="2" PointY="3.1241683261718749" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.police" Width="1.5" PointX="11.625" PointY="0.5" Height="2.7494921874999996" />
+        <AssociationConnector Association="Model.Userpolice">
+          <ConnectorPoint PointX="4" PointY="0.5138451538461537" />
+          <ConnectorPoint PointX="4.8263451538461535" PointY="-0.3125" />
+          <ConnectorPoint PointX="10.8125" PointY="-0.3125" />
+          <ConnectorPoint PointX="11.625" PointY="0.5" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Fav" Width="1.5" PointX="13.25" PointY="0.5" Height="2.364889322916667" />
+        <AssociationConnector Association="Model.UserFav">
+          <ConnectorPoint PointX="3.9838461538461538" PointY="0.5" />
+          <ConnectorPoint PointX="4.5150961538461534" PointY="-0.03125" />
+          <ConnectorPoint PointX="11.010416666666666" PointY="-0.031250000000000583" />
+          <ConnectorPoint PointX="11.177083333333334" PointY="-0.03125" />
+          <ConnectorPoint PointX="12.71875" PointY="-0.03125" />
+          <ConnectorPoint PointX="13.25" PointY="0.5" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.DateTime" Width="1.5" PointX="11.625" PointY="3.5" Height="2.364889322916667" />
+        <AssociationConnector Association="Model.UserDateTime">
+          <ConnectorPoint PointX="4" PointY="4.0796377513311937" />
+          <ConnectorPoint PointX="4.3125" PointY="4.0796377513311937" />
+          <ConnectorPoint PointX="4.3125" PointY="6.0042122395833344" />
+          <ConnectorPoint PointX="12.375" PointY="6.0042122395833344" />
+          <ConnectorPoint PointX="12.375" PointY="5.8648893229166674" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Support" Width="1.5" PointX="0.5" PointY="13.875" Height="3.7109993489583317" />
+        <AssociationConnector Association="Model.UserSupport">
+          <ConnectorPoint PointX="2.8945295" PointY="7.6724251302083317" />
+          <ConnectorPoint PointX="2.8945295" PointY="8.125" />
+          <ConnectorPoint PointX="2.25" PointY="8.125" />
+          <ConnectorPoint PointX="2.25" PointY="15.730499674479166" />
+          <ConnectorPoint PointX="2" PointY="15.730499674479166" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Kala" Width="1.5" PointX="12.125" PointY="6.125" Height="9.6723437500000031" />
+        <AssociationConnector Association="Model.UserKala">
+          <ConnectorPoint PointX="4" PointY="5.0731774954572648" />
+          <ConnectorPoint PointX="4.34375" PointY="5.0731774954572648" />
+          <ConnectorPoint PointX="4.34375" PointY="6.0042122395833344" />
+          <ConnectorPoint PointX="12.874999" PointY="6.0042122395833344" />
+          <ConnectorPoint PointX="12.874999" PointY="6.125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.comment" Width="1.5" PointX="14" PointY="6.125" Height="3.1340950520833317" />
+        <AssociationConnector Association="Model.Kalacomment">
+          <ConnectorPoint PointX="13.625" PointY="7.6920475260416659" />
+          <ConnectorPoint PointX="14" PointY="7.6920475260416659" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Group" Width="1.5" PointX="4.375" PointY="6.125" Height="4.6725065104166656" />
+        <AssociationConnector Association="Model.UserGroup">
+          <ConnectorPoint PointX="4" PointY="6.8987125651041659" />
+          <ConnectorPoint PointX="4.197916666666667" PointY="6.898712565104165" />
+          <ConnectorPoint PointX="4.364583333333333" PointY="6.8987125651041659" />
+          <ConnectorPoint PointX="4.375" PointY="6.8987125651041659" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Download" Width="1.5" PointX="9.75" PointY="0.5" Height="5.057109375" />
+        <EntityTypeShape EntityType="Model.DownloadGroup" Width="1.5" PointX="8" PointY="0.5" Height="3.5186979166666656" />
+        <AssociationConnector Association="Model.UserDownloadGroup">
+          <ConnectorPoint PointX="4" PointY="0.54269130769230767" />
+          <ConnectorPoint PointX="4.5114413076923086" PointY="0.031249999999999112" />
+          <ConnectorPoint PointX="7.53125" PointY="0.031249999999999112" />
+          <ConnectorPoint PointX="8" PointY="0.49999999999999944" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.DownloadGroupStandard">
+          <ConnectorPoint PointX="9.5" PointY="2.2593489583333328" />
+          <ConnectorPoint PointX="9.75" PointY="2.2593489583333328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Gallery" Width="1.5" PointX="4.375" PointY="0.5" Height="5.4417122395833335" />
+        <EntityTypeShape EntityType="Model.AX" Width="1.5" PointX="6.125" PointY="0.5" Height="3.9033007812499996" />
+        <AssociationConnector Association="Model.GalleryAX">
+          <ConnectorPoint PointX="5.875" PointY="2.451650390625" />
+          <ConnectorPoint PointX="6.125" PointY="2.451650390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.UserGallery">
+          <ConnectorPoint PointX="4" PointY="2.4044838381866058" />
+          <ConnectorPoint PointX="4.375" PointY="2.4044838381866058" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.About" PointX="13.375" PointY="3.5" Width="1.5" Height="2.5571907552083353" />
+        <AssociationConnector Association="Model.UserAbout">
+          <ConnectorPoint PointX="3.196248" PointY="0.5" />
+          <ConnectorPoint PointX="3.196248" PointY="0.4375" />
+          <ConnectorPoint PointX="3.9341666666666666" PointY="0.43749999999999911" />
+          <ConnectorPoint PointX="4.18852464102564" PointY="0.4375" />
+          <ConnectorPoint PointX="7.8541666666666679" PointY="0.43749999999999944" />
+          <ConnectorPoint PointX="8.0208333333333339" PointY="0.4375" />
+          <ConnectorPoint PointX="11.5625" PointY="0.4375" />
+          <ConnectorPoint PointX="11.5625" PointY="5.9273893229166674" />
+          <ConnectorPoint PointX="13.28125" PointY="5.9273893229166674" />
+          <ConnectorPoint PointX="13.28125" PointY="4.7785953776041676" />
+          <ConnectorPoint PointX="13.375" PointY="4.7785953776041676" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Links" Width="1.5" PointX="14.875" PointY="0.5" Height="2.5571907552083317" />
+        <AssociationConnector Association="Model.UserLinks">
+          <ConnectorPoint PointX="3.955" PointY="0.5" />
+          <ConnectorPoint PointX="4.33" PointY="0.125" />
+          <ConnectorPoint PointX="4.3343579743589746" PointY="0.12499999999999942" />
+          <ConnectorPoint PointX="4.5010246410256407" PointY="0.125" />
+          <ConnectorPoint PointX="7.5416666666666679" PointY="0.12499999999999942" />
+          <ConnectorPoint PointX="7.7083333333333339" PointY="0.125" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="0.12499999999999942" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="0.125" />
+          <ConnectorPoint PointX="12.791666666666666" PointY="0.12499999999999942" />
+          <ConnectorPoint PointX="12.958333333333334" PointY="0.125" />
+          <ConnectorPoint PointX="14.5" PointY="0.125" />
+          <ConnectorPoint PointX="14.875" PointY="0.5" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.KalaImage" Width="1.5" PointX="14" PointY="9.5" Height="3.7109993489583353" />
+        <AssociationConnector Association="Model.KalaKalaImage">
+          <ConnectorPoint PointX="13.625" PointY="11.355499674479168" />
+          <ConnectorPoint PointX="14" PointY="11.355499674479168" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.SubGroup" Width="1.5" PointX="6.125" PointY="6.125" Height="5.8263151041666656" />
+        <EntityTypeShape EntityType="Model.Detail" Width="1.5" PointX="7.875" PointY="6.125" Height="5.634013671875" />
+        <EntityTypeShape EntityType="Model.Photo" PointX="9.75" PointY="6.125" Width="1.5" Height="5.4417122395833335" />
+        <AssociationConnector Association="Model.GroupSubGroup">
+          <ConnectorPoint PointX="5.875" PointY="8.4612532552083337" />
+          <ConnectorPoint PointX="6.125" PointY="8.4612532552083337" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.SubGroupDetail">
+          <ConnectorPoint PointX="7.625" PointY="8.9420068359375016" />
+          <ConnectorPoint PointX="7.875" PointY="8.9420068359375016" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.DetailPhoto">
+          <ConnectorPoint PointX="9.375" PointY="8.8458561197916659" />
+          <ConnectorPoint PointX="9.75" PointY="8.8458561197916659" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Balance" Width="1.5" PointX="0.5" PointY="6.5" Height="1.9802864583333335" />
+        <AssociationConnector Association="Model.UserBalance">
+          <ConnectorPoint PointX="2.5" PointY="7.18236328125" />
+          <ConnectorPoint PointX="2" PointY="7.18236328125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Photo_comment" Width="1.5" PointX="9.75" PointY="12.125" Height="3.1340950520833317" />
+        <AssociationConnector Association="Model.PhotoPhoto_comment">
+          <ConnectorPoint PointX="10.5" PointY="11.566712239583334" />
+          <ConnectorPoint PointX="10.5" PointY="12.125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Sub_comment" Width="1.5" PointX="6.125" PointY="12.625" Height="3.1340950520833317" />
+        <AssociationConnector Association="Model.SubGroupSub_comment">
+          <ConnectorPoint PointX="6.875" PointY="11.951315104166666" />
+          <ConnectorPoint PointX="6.875" PointY="12.125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Basket" Width="1.5" PointX="0.5" PointY="8.625" Height="5.0571093750000014" />
+        <AssociationConnector Association="Model.UserBasket">
+          <ConnectorPoint PointX="3.7070334999999996" PointY="7.6724251302083317" />
+          <ConnectorPoint PointX="3.7070334999999996" PointY="8.109375" />
+          <ConnectorPoint PointX="3.4348963333333331" PointY="8.109375" />
+          <ConnectorPoint PointX="3.2682296666666661" PointY="8.109375" />
+          <ConnectorPoint PointX="3.2063795833333333" PointY="8.109375" />
+          <ConnectorPoint PointX="3.0397129166666663" PointY="8.109375" />
+          <ConnectorPoint PointX="2.3125" PointY="8.109375" />
+          <ConnectorPoint PointX="2.3125" PointY="11.153554687500002" />
+          <ConnectorPoint PointX="2" PointY="11.153554687500002" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Factor" Width="1.5" PointX="2.5" PointY="11.5" Height="5.0571093750000031" />
+        <AssociationConnector Association="Model.UserFactor">
+          <ConnectorPoint PointX="3.12304625" PointY="7.6724251302083317" />
+          <ConnectorPoint PointX="3.12304625" PointY="8.25" />
+          <ConnectorPoint PointX="2.375" PointY="8.25" />
+          <ConnectorPoint PointX="2.375" PointY="13.615250337239583" />
+          <ConnectorPoint PointX="2.5" PointY="13.615250337239583" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.Det_comment" Width="1.5" PointX="8" PointY="12.125" Height="3.1340950520833317" />
+        <AssociationConnector Association="Model.DetailDet_comment">
+          <ConnectorPoint PointX="8.6875" PointY="11.759013671875" />
+          <ConnectorPoint PointX="8.6875" PointY="12.125" />
+        </AssociationConnector>
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

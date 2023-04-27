@@ -1,0 +1,149 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html >
+<head runat="server">
+   
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+  
+      
+	
+<title>   ASPCore      </title>
+<meta name="description" content="ASPCore  " />
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+
+    <link href="css/plugins.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+   
+    <link href="css/color-variations/blue-dark.css" rel="stylesheet" />
+    <link href="css/popup.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- LOAD JQUERY LIBRARY -->
+  
+    <script src="js/jquery-1.11.1.min.js"></script>
+   
+    <!-- CUSTOM CSS -->
+   
+
+    <%--<link href="css/custom.css" rel="stylesheet" />--%>
+    
+   
+</head>
+	
+	
+
+<body >
+    <form id="form1" runat="server">
+   <div id="wrapper" >
+   <!-- Body Inner -->
+    <div class="body-inner">
+        <!-- Header -->
+
+
+
+        <header id="header" data-fullwidth="true" data-transparent="true" class="dark">
+            <div class="header-inner">
+                <div class="container">
+                    <!--Logo-->
+                    <div id="logo">
+                        <a href="/">
+                            <span class="logo-default"><img src="images/logo.png" alt="ASPCore"></span>
+                            <span class="logo-dark"><img src="images/logo-dark.png" alt="ASPCore"></span>
+                        </a>
+                  
+
+                        
+                    </div>
+                    <!--End: Logo-->
+                  
+                    <!--Header Extras-->
+                    <div class="header-extras">
+                        <ul>
+                            <li>
+                                <a  href="login.aspx"> <i class="fa fa-user "></i></a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <!--end: Header Extras-->
+                    <!--Navigation Resposnive Trigger-->
+                    <div id="mainMenu-trigger">
+                        <a class="lines-button x"><span class="lines"></span></a>
+                    </div>
+                    <!--end: Navigation Resposnive Trigger-->
+                    <!--Navigation-->
+                    <div id="mainMenu">
+                        <div class="container">
+                            <nav>
+                                <ul>
+                                    
+                                   
+                                   
+                                   <li><a href="Articles.aspx">articles</a></li>
+                                 
+                                   
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!--end: Navigation-->
+                </div>
+            </div>
+        </header>
+        <!-- end: Header -->
+      
+       
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+     
+   
+
+        
+
+        <!-- Footer -->
+        <footer id="footer" class="footer-light">
+           
+           
+            
+            
+             <div class="copyright-content" dir="ltr">
+                <div class="container">
+                                   <div class="copyright-text text-center">&copy; 2021-<script>document.write(new Date().getFullYear());</script> ASPCore.ir. All Rights Reserved.<br /> 
+                      
+                    </div>
+                  </div>
+                </div>
+           
+        </footer>
+        <!-- end: Footer -->
+           
+         </div>
+    <!-- end: Body Inner -->
+        </div>
+
+             
+
+
+   </form>
+<!-- Scroll top -->
+	<a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+	<!--Plugins-->
+    <%--<script src="js/jquery.js"></script>--%>
+    <script src="js/plugins.js"></script>
+    <!--Template functions-->
+    <script src="js/functions.js"></script>
+
+
+  
+</body> 
+   
+</html>
